@@ -1,0 +1,3717 @@
+{
+  "x-generator": "NSwag v11.17.12.0 (NJsonSchema v9.10.50.0 (Newtonsoft.Json v13.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "Massachusetts Legislature Public API",
+    "description": "An API for use in obtaining all publicly available information from the Massachusetts Legislature.",
+    "termsOfService": "https://malegislature.gov/StateHouse/TermsAndConditions",
+    "version": "v1"
+  },
+  "host": "malegislature.gov",
+  "basePath": "/api",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/Documents/{documentNumber}/Amendments": {
+      "get": {
+        "tags": ["Amendments"],
+        "summary": "Returns a list of amendments by Document Number for the current General Court.",
+        "operationId": "Amendments_GetAmendmentsAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AmendmentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/Amendments": {
+      "get": {
+        "tags": ["Amendments"],
+        "summary": "Returns a list of amendments by Document Number and General Court.",
+        "operationId": "Amendments_GetAmendments",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AmendmentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/Branches/{branch}/Amendments": {
+      "get": {
+        "tags": ["Amendments"],
+        "summary": "Returns a list of amendments by Document Number and General Court and Branch.",
+        "operationId": "Amendments_GetAmendments2",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AmendmentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/Branches/{branch}/Amendments/{amendmentNumber}": {
+      "get": {
+        "tags": ["Amendments"],
+        "summary": "Returns a specific Amendment by General Court And Document Number And Branch and Amendment Number",
+        "operationId": "Amendments_GetAmendment",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "amendmentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Amendment"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/Branches/{branch}/Category/{category}/Amendments": {
+      "get": {
+        "tags": ["Amendments"],
+        "summary": "Returns a list of amendments by Document Number and General Court And Branch And Category.",
+        "operationId": "Amendments_GetAmendments3",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AmendmentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Committees": {
+      "get": {
+        "tags": ["Committees"],
+        "summary": "Returns all active Committees in the current General Court",
+        "operationId": "Committees_GetCommitteesAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommitteeSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Committees/{committeeCode}": {
+      "get": {
+        "tags": ["Committees"],
+        "summary": "Returns a Committee by the Committee Code",
+        "operationId": "Committees_GetCommittees2",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "committeeCode",
+            "in": "path",
+            "required": true,
+            "description": "The Committee Code to filter by.",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Committee"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Committees": {
+      "get": {
+        "tags": ["Committees"],
+        "summary": "Returns all active Committees by the General Court",
+        "operationId": "Committees_GetCommittees",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommitteeSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Committees/{committeeCode}": {
+      "get": {
+        "tags": ["Committees"],
+        "summary": "Returns a Committee by the Committee Code and General Court",
+        "operationId": "Committees_GetCommittees3",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "committeeCode",
+            "in": "path",
+            "required": true,
+            "description": "The Committee Code to filter by.",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Committee"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Committees/CommitteeVotes": {
+      "get": {
+        "tags": ["Committees"],
+        "summary": "Returns all Committee Codes that contain Committee Votes.",
+        "operationId": "Committees_GetCommitteeCodes",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Committees/{committeeCode}/Documents/{documentNumber}/CommitteeVotes": {
+      "get": {
+        "tags": ["CommitteeVotes"],
+        "summary": "Returns all Committee Votes for by Committee Code and Document Number in the current General Court.",
+        "operationId": "CommitteeVotes_GetCommitteeVotes",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "committeeCode",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommitteeVote"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Committees/{committeeCode}/Documents/{documentNumber}/CommitteeVotes": {
+      "get": {
+        "tags": ["CommitteeVotes"],
+        "summary": "Returns all Committees Votes by Committee Code, Document Number, and General Court.",
+        "operationId": "CommitteeVotes_GetCommitteeVotesByDocument",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "committeeCode",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommitteeVote"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Documents/{documentNumber}/DocumentHistoryActions": {
+      "get": {
+        "tags": ["DocumentHistoryActions"],
+        "summary": "Returns a document's history by the Bill or Docket Number",
+        "operationId": "DocumentHistoryActions_GetDocumentHistoryAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "description": "The Bill or Docket Number to filter by.",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentHistoryAction"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/DocumentHistoryActions": {
+      "get": {
+        "tags": ["DocumentHistoryActions"],
+        "summary": "Returns a document's history by the Bill or Docket Number and General Court",
+        "operationId": "DocumentHistoryActions_GetDocumentHistory",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "description": "The Bill or Docket Number to filter by.",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentHistoryAction"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Cities/{city}/Documents": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a list of documents based on the city for the current general court",
+        "operationId": "Documents_GetDocumentByCityAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "city",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Documents": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns all of documents publicly available in the current General Court",
+        "operationId": "Documents_GetDocumentsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Documents/{documentNumber}": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a document by the Bill or Docket Number",
+        "operationId": "Documents_GetDocument",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "description": "The Bill or Docket Number to filter by.",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Document"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Documents/{documentNumber}/Similar": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a list of similar documents to the given document",
+        "operationId": "Documents_GetSimilarDocumentsAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "description": "The document number to filter by",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Documents/SupportedCities": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a list of available cities to search for local bills in the current General Court.",
+        "operationId": "Documents_GetCitiesAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Cities/{city}/Documents": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a list of documents based on the city and the general court number",
+        "operationId": "Documents_GetDocumentByCity",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "city",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns all of documents publicly available by the General Court",
+        "operationId": "Documents_GetDocuments",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a document by the Bill or Docket Number and General Court",
+        "operationId": "Documents_GetDocument2",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "description": "The Bill or Docket Number to filter by.",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Document"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/Similar": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a list of similar documents to the given document",
+        "operationId": "Documents_GetSimilarDocuments",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "description": "The document number to filter by",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The general court number to filter by",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/SupportedCities": {
+      "get": {
+        "tags": ["Documents"],
+        "summary": "Returns a list of available cities to search for local bills by General Court.",
+        "operationId": "Documents_GetCities",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts": {
+      "get": {
+        "tags": ["GeneralCourts"],
+        "summary": "This call is not supported. You must specify what context you are trying to get the available General Courts for.",
+        "operationId": "GeneralCourts_GetGeneralCourt",
+        "responses": {
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}": {
+      "get": {
+        "tags": ["GeneralCourts"],
+        "summary": "This call is not supported. Further details for each General Court provided are not available",
+        "operationId": "GeneralCourts_GetGeneralCourt2",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "Number of the General Court to be returned.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/GeneralCourts/Committees": {
+      "get": {
+        "tags": ["GeneralCourts"],
+        "summary": "Returns a list of all General Courts with Committees available",
+        "operationId": "GeneralCourts_GetGeneralCourtsForCommittees",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralCourt"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/Documents": {
+      "get": {
+        "tags": ["GeneralCourts"],
+        "summary": "Returns a list of all General Courts with Documents available",
+        "operationId": "GeneralCourts_GetGeneralCourtsForDocuments",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralCourt"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/LegislativeMembers": {
+      "get": {
+        "tags": ["GeneralCourts"],
+        "summary": "Returns a list of all General Courts with Legislators available",
+        "operationId": "GeneralCourts_GetGeneralCourtsForLegislativeMembers",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralCourt"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/Sessions": {
+      "get": {
+        "tags": ["GeneralCourts"],
+        "summary": "Returns a list of all General Courts with Sessions available",
+        "operationId": "GeneralCourts_GetGeneralCourtsForSessions",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralCourt"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Chapters": {
+      "get": {
+        "tags": ["GeneralLawChapters"],
+        "summary": "Returns all of the General Law Chapters currently available.",
+        "operationId": "GeneralLawChapters_GetChapters",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralLawChapterSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Chapters/{code}": {
+      "get": {
+        "tags": ["GeneralLawChapters"],
+        "summary": "Returns the details for a specific Chapter",
+        "operationId": "GeneralLawChapters_GetChaptersByCode",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "description": "The chapter code to filter by",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralLawChapter"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Parts/{partCode}/Chapters": {
+      "get": {
+        "tags": ["GeneralLawChapters"],
+        "summary": "Returns all of the chapters for a specific Part",
+        "operationId": "GeneralLawChapters_GetChaptersByPart",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "partCode",
+            "in": "path",
+            "required": true,
+            "description": "The Part code to filter by",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralLawChapterSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Parts": {
+      "get": {
+        "tags": ["GeneralLawParts"],
+        "summary": "Returns all of the General Laws Parts currently available",
+        "operationId": "GeneralLawParts_GetGeneralLawsParts",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GeneralLawPartSummary"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Parts/{code}": {
+      "get": {
+        "tags": ["GeneralLawParts"],
+        "summary": "Returns the details for a specific Part",
+        "operationId": "GeneralLawParts_GetGeneralLawsParts2",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "description": "The Part code to filter by",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GeneralLawPart"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Chapters/{chapter}/Sections": {
+      "get": {
+        "tags": ["GeneralLawSections"],
+        "summary": "Returns all of the General Law Sections contained in a specific chapter",
+        "operationId": "GeneralLawSections_GetGeneralLawsSectionsAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "chapter",
+            "in": "path",
+            "required": true,
+            "description": "The chapter to filter by",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralLawSectionSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Chapters/{chapter}/Sections/{section}": {
+      "get": {
+        "tags": ["GeneralLawSections"],
+        "summary": "Returns the details of a specific section based on the chapter and section",
+        "operationId": "GeneralLawSections_GetGeneralLawsSections",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "chapter",
+            "in": "path",
+            "required": true,
+            "description": "The chapter code to filter by",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "section",
+            "in": "path",
+            "required": true,
+            "description": "The section code to filter by",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneralLawSection"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Hearings": {
+      "get": {
+        "tags": ["Hearings"],
+        "summary": "Returns all hearings publicly available",
+        "operationId": "Hearings_GetHearingsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HearingSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Hearings/{eventId}": {
+      "get": {
+        "tags": ["Hearings"],
+        "summary": "Returns a hearing by the Hearing ID",
+        "operationId": "Hearings_GetHearings",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "description": "The Hearing ID to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Hearing"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/HouseJournals": {
+      "get": {
+        "tags": ["HouseJournals"],
+        "summary": "Returns all publicly available House Journals for the specified General Court",
+        "operationId": "HouseJournals_GetHouseJournals",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/JournalSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/HouseJournals": {
+      "get": {
+        "tags": ["HouseJournals"],
+        "summary": "Returns all publicly available House Journals for the current General Court",
+        "operationId": "HouseJournals_GetHouseJournalsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/JournalSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/HouseJournals/{sessionDate}/{isJoint}": {
+      "get": {
+        "tags": ["HouseJournals"],
+        "summary": "Returns a House Journal by General Court, Session Date, and Whether it is a joint session or not.  The Date must be provided in the format: yyyyMMddHHmmss  ",
+        "operationId": "HouseJournals_GetHouseJournals2",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "sessionDate",
+            "in": "path",
+            "required": true,
+            "description": "The Session Date to filter by",
+            "x-nullable": false
+          },
+          {
+            "type": "boolean",
+            "name": "isJoint",
+            "in": "path",
+            "required": true,
+            "description": "Whether it was a Joint Session",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HouseJournal"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Branches/{branch}/Leadership": {
+      "get": {
+        "tags": ["Leadership"],
+        "summary": "Returns the Legislative Leadership by Branch for the current General Court.",
+        "operationId": "Leadership_GetLeadershipAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Leadership"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Branches/{branch}/Leadership": {
+      "get": {
+        "tags": ["Leadership"],
+        "summary": "Returns the Legislative Leadership by Branch and General Court.",
+        "operationId": "Leadership_GetLeadership",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Leadership"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/LegislativeMembers": {
+      "get": {
+        "tags": ["LegislativeMembers"],
+        "summary": "Returns all the legislative members by General Court",
+        "operationId": "LegislativeMembers_GetLegislativeMembers",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LegislativeMemberSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/LegislativeMembers/{memberCode}": {
+      "get": {
+        "tags": ["LegislativeMembers"],
+        "summary": "Returns a legislative member by the General Court number and the member code",
+        "operationId": "LegislativeMembers_GetLegislativeMembers3",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "memberCode",
+            "in": "path",
+            "required": true,
+            "description": "The member code to filter by.",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LegislativeMember"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/LegislativeMembers": {
+      "get": {
+        "tags": ["LegislativeMembers"],
+        "summary": "Returns all active legislative members in the current General Court",
+        "operationId": "LegislativeMembers_GetLegislativeMembersAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LegislativeMemberSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/LegislativeMembers/{memberCode}": {
+      "get": {
+        "tags": ["LegislativeMembers"],
+        "summary": "Returns a legislative member by the member code for the current General Court",
+        "operationId": "LegislativeMembers_GetLegislativeMembers2",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "memberCode",
+            "in": "path",
+            "required": true,
+            "description": "The member code to filter by.",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LegislativeMember"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Branches/{branch}/Reports": {
+      "get": {
+        "tags": ["Reports"],
+        "summary": "Returns all publicly available Reports by Branch.",
+        "operationId": "Reports_GetReports",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Report"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Reports": {
+      "get": {
+        "tags": ["Reports"],
+        "summary": "Returns all publicly available Reports for the current General Court.",
+        "operationId": "Reports_GetReportsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Report"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Documents/{documentNumber}/RollCalls": {
+      "get": {
+        "tags": ["RollCalls"],
+        "summary": "Returns the Roll Calls by Document Number for the current General Court.",
+        "operationId": "RollCalls_GetRollCallAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RollCallSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Branches/{branch}/RollCalls/{rollCallNumber}": {
+      "get": {
+        "tags": ["RollCalls"],
+        "summary": "Returns a Roll Call by General Court, Branch, and Roll Call Number",
+        "operationId": "RollCalls_GetRollCall2",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "rollCallNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RollCall"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Documents/{documentNumber}/RollCalls": {
+      "get": {
+        "tags": ["RollCalls"],
+        "summary": "Returns the Roll Calls by Document Number and General Court Number.",
+        "operationId": "RollCalls_GetRollCall",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "documentNumber",
+            "in": "path",
+            "required": true,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RollCallSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/SenateJournals": {
+      "get": {
+        "tags": ["SenateJournals"],
+        "summary": "Returns all publicly available Senate Journals for specified General Court",
+        "operationId": "SenateJournals_GetSenateJournals",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/JournalSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SenateJournals": {
+      "get": {
+        "tags": ["SenateJournals"],
+        "summary": "Returns all publicly available Senate Journals for the current General Court",
+        "operationId": "SenateJournals_GetSenateJournalsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/JournalSummary"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SenateJournals/{sessionDate}/{isJoint}": {
+      "get": {
+        "tags": ["SenateJournals"],
+        "summary": "Returns a Senate Journal by the Session Date. The Date must be in the format yyyyMMddHHmmss.",
+        "operationId": "SenateJournals_GetSenateJournals2",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "sessionDate",
+            "in": "path",
+            "required": true,
+            "description": "The session date of the journal",
+            "x-nullable": false
+          },
+          {
+            "type": "boolean",
+            "name": "isJoint",
+            "in": "path",
+            "required": true,
+            "description": "Whether it was a Joint Session",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SenateJournal"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SessionLaws": {
+      "get": {
+        "tags": ["SessionLaws"],
+        "summary": "Returns all of the Session Laws for the current year",
+        "operationId": "SessionLaws_GetSessionLaws",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SessionLaw"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SessionLaws/{year}": {
+      "get": {
+        "tags": ["SessionLaws"],
+        "summary": "Returns all the Session Laws for the specified year",
+        "operationId": "SessionLaws_GetSessionLaws2",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "description": "The year of the session to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SessionLaw"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SessionLaws/{year}/{chapterNumber}": {
+      "get": {
+        "tags": ["SessionLaws"],
+        "summary": "Returns a Session Law based on the Session year and chapter number",
+        "operationId": "SessionLaws_GetSessionLaws3",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "description": "The year of the Session to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "chapterNumber",
+            "in": "path",
+            "required": true,
+            "description": "The chapter number of the Session Law",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SessionLaw"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SessionLaws/SupportedYears": {
+      "get": {
+        "tags": ["SessionLaws"],
+        "summary": "Returns a list of all the available years in which Session Laws exist",
+        "operationId": "SessionLaws_GetSessionLawsYears",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/GeneralCourts/{generalCourtNumber}/Sessions": {
+      "get": {
+        "tags": ["Sessions"],
+        "summary": "Returns all Sessions by the General Court",
+        "operationId": "Sessions_GetSessionsByGeneralCourt",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "generalCourtNumber",
+            "in": "path",
+            "required": true,
+            "description": "The General Court to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Session"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Sessions": {
+      "get": {
+        "tags": ["Sessions"],
+        "summary": "Returns all Sessions in the current General Court",
+        "operationId": "Sessions_GetSessionsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Session"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/Sessions/{eventId}": {
+      "get": {
+        "tags": ["Sessions"],
+        "summary": "Returns a Session by the Session ID",
+        "operationId": "Sessions_GetSessions",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "description": "The Session ID to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Session"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SpecialEvents": {
+      "get": {
+        "tags": ["SpecialEvents"],
+        "summary": "Returns all publicly available Special Events",
+        "operationId": "SpecialEvents_GetSpecialEventsAll",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SpecialEvent"
+              }
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    },
+    "/SpecialEvents/{eventId}": {
+      "get": {
+        "tags": ["SpecialEvents"],
+        "summary": "Returns a Special Event by Special Event ID",
+        "operationId": "SpecialEvents_GetSpecialEvents",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "description": "The Special Event ID to filter by.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SpecialEvent"
+            }
+          },
+          "400": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HttpResponseException"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AgendaItem": {
+      "type": "object",
+      "description": "Data Model for event agenda items returned in single API calls",
+      "additionalProperties": false,
+      "properties": {
+        "topic": {
+          "type": "string",
+          "description": "Topic of the agenda item"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "Start time of the agenda item",
+          "format": "date-time"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "End time of the agenda item",
+          "format": "date-time"
+        },
+        "documentsInAgenda": {
+          "type": "array",
+          "description": "List of all Documents being discussed in this agenda item",
+          "items": {
+            "$ref": "#/definitions/DocumentSummary"
+          }
+        }
+      }
+    },
+    "Amendment": {
+      "type": "object",
+      "description": "Data model for Bill Amendments",
+      "additionalProperties": false,
+      "required": ["isFurther", "generalCourtNumber"],
+      "properties": {
+        "amendmentNumber": {
+          "type": "string",
+          "description": "The Amendment number of the Amendment."
+        },
+        "parentBillNumber": {
+          "type": "string",
+          "description": "The Bill Number that the Amendment is for."
+        },
+        "bill": {
+          "description": "The link to the Amendment Document page if it exists.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DocumentSummary"
+            }
+          ]
+        },
+        "sponsor": {
+          "description": "The sponsor of the Amendment.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/BillSponsorSummary"
+            }
+          ]
+        },
+        "category": {
+          "type": "string",
+          "description": "The Category of the Amendment."
+        },
+        "action": {
+          "type": "string",
+          "description": "The Action of the Amendment."
+        },
+        "rollCall": {
+          "type": "array",
+          "description": "The Roll Call taken of the Amendment.",
+          "items": {
+            "$ref": "#/definitions/RollCallSummary"
+          }
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the Amendment."
+        },
+        "branch": {
+          "type": "string",
+          "description": "The branch of the Amendment."
+        },
+        "redraftCount": {
+          "type": "integer",
+          "description": "The Redraft count of the Amendment.",
+          "format": "int32"
+        },
+        "isFurther": {
+          "type": "boolean",
+          "description": "Whether the amendment is a Further Amendment."
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "The General Court Number of the Amendment.",
+          "format": "int32"
+        },
+        "text": {
+          "type": "string",
+          "description": "The text of the Amendment."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "AmendmentSummary": {
+      "type": "object",
+      "description": "The data model for a limited Amendment",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "amendmentNumber": {
+          "type": "string",
+          "description": "The Amendment Number of the Amendment."
+        },
+        "parentBillNumber": {
+          "type": "string",
+          "description": "The Bill Number of the Bill that is being Amended."
+        },
+        "branch": {
+          "type": "string",
+          "description": "The Branch doing the amending."
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "The General Court Number of the Bill being Amended.",
+          "format": "int32"
+        },
+        "details": {
+          "type": "string",
+          "description": "A link to the detailed model of an Amendment."
+        }
+      }
+    },
+    "Attachment": {
+      "type": "object",
+      "description": "The data model for Attachments returned with Bill Documents",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description of the Attachment."
+        },
+        "downloadUrl": {
+          "type": "string",
+          "description": "The download link of the Attachment"
+        }
+      }
+    },
+    "BillSponsorSummary": {
+      "type": "object",
+      "description": "Data Model for Bill Sponsors returned in batch API calls",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of the bill sponsor"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Bill Sponsor"
+        },
+        "type": {
+          "description": "Type of the Bill Sponsor\n1 = Legislative Member, 2 = Committee, 3 = Public Request, 4 = Special Request",
+          "allOf": [
+            {
+              "$ref": "#/definitions/SponsorTypeEnum"
+            }
+          ]
+        },
+        "details": {
+          "type": "string",
+          "description": "Link for the API to get the details for this entry\nOnly Committees and Legislative Members will have further details that can be obtained in this way"
+        }
+      }
+    },
+    "Committee": {
+      "type": "object",
+      "description": "Data Model for Committees returned in single API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "committeeCode": {
+          "type": "string",
+          "description": "Code of the Committee"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full Name of the Committee"
+        },
+        "shortName": {
+          "type": "string",
+          "description": "Short Name of the Committee"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the Committee"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Branch of the Committee"
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this Committee",
+          "format": "int32"
+        },
+        "senateChairperson": {
+          "description": "Senate Chairperson for this Committee",
+          "allOf": [
+            {
+              "$ref": "#/definitions/LegislativeMemberSummary"
+            }
+          ]
+        },
+        "houseChairperson": {
+          "description": "House Chairperson for the Committee",
+          "allOf": [
+            {
+              "$ref": "#/definitions/LegislativeMemberSummary"
+            }
+          ]
+        },
+        "documentsBeforeCommittee": {
+          "type": "array",
+          "description": "List of all Documents currently before this committee",
+          "items": {
+            "$ref": "#/definitions/DocumentSummary"
+          }
+        },
+        "reportedOutDocuments": {
+          "type": "array",
+          "description": "List of all Documents Reported Out from this committee",
+          "items": {
+            "$ref": "#/definitions/DocumentSummary"
+          }
+        },
+        "hearings": {
+          "type": "array",
+          "description": "List of all Documents Reported Out from this committee",
+          "items": {
+            "$ref": "#/definitions/HearingSummary"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "CommitteeRecommendation": {
+      "type": "object",
+      "description": "The data model for Commitee Recommendations returned in Bill Documents.",
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "type": "string",
+          "description": "The action recommended by the Committee."
+        },
+        "fiscalAmounts": {
+          "type": "array",
+          "description": "The Fiscal Amounts decided by the Committee.",
+          "items": {
+            "$ref": "#/definitions/FiscalAmount"
+          }
+        },
+        "committee": {
+          "description": "The Committee making the recommendation.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CommitteeSummary"
+            }
+          ]
+        },
+        "votes": {
+          "type": "array",
+          "description": "A list of votes by the Committee.",
+          "items": {
+            "$ref": "#/definitions/CommitteeVote"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "CommitteeSummary": {
+      "type": "object",
+      "description": "Data Model for Committees returned in batch API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "committeeCode": {
+          "type": "string",
+          "description": "Code of the Committee"
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this Committee",
+          "format": "int32"
+        },
+        "details": {
+          "type": "string",
+          "description": "Link for the API to get the details for this Committee"
+        }
+      }
+    },
+    "CommitteeVote": {
+      "type": "object",
+      "description": "Data Model for Committee Votes",
+      "additionalProperties": false,
+      "required": ["date"],
+      "properties": {
+        "question": {
+          "type": "string",
+          "description": "The Question Text of the Committee Vote"
+        },
+        "bill": {
+          "description": "The Bill the Vote is on.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DocumentSummary"
+            }
+          ]
+        },
+        "committee": {
+          "description": "The Committee of the vote.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CommitteeSummary"
+            }
+          ]
+        },
+        "date": {
+          "type": "string",
+          "description": "The time the vote was taken.",
+          "format": "date-time"
+        },
+        "vote": {
+          "type": "array",
+          "description": "The vote record.",
+          "items": {
+            "$ref": "#/definitions/CommitteeVoteRecord"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "CommitteeVoteRecord": {
+      "type": "object",
+      "description": "The data model for recorded Committee Votes",
+      "additionalProperties": false,
+      "properties": {
+        "favorable": {
+          "type": "array",
+          "description": "A list of members who voted Favorable.",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        },
+        "adverse": {
+          "type": "array",
+          "description": "A list of members who voted Adverse.",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        },
+        "reserveRight": {
+          "type": "array",
+          "description": "A list of members who voted ReserveRight.",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        },
+        "noVoteRecorded": {
+          "type": "array",
+          "description": "A list of members who have No Vote Recorded.",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "Document": {
+      "type": "object",
+      "description": "Data Model for documents returned in single API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the Document."
+        },
+        "billNumber": {
+          "type": "string",
+          "description": "Bill Number of the Document."
+        },
+        "docketNumber": {
+          "type": "string",
+          "description": "Docket Number of the Document."
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this Document.",
+          "format": "int32"
+        },
+        "primarySponsor": {
+          "description": "The primary sponsor of this Document.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/BillSponsorSummary"
+            }
+          ]
+        },
+        "cosponsors": {
+          "type": "array",
+          "description": "List of all Legislators copsonsoring this Document.",
+          "items": {
+            "$ref": "#/definitions/BillSponsorSummary"
+          }
+        },
+        "billHistory": {
+          "type": "string",
+          "description": "Link to the Bill History for this Document."
+        },
+        "legislationTypeName": {
+          "type": "string",
+          "description": "Display name for the legislation type of this Document."
+        },
+        "pinslip": {
+          "type": "string",
+          "description": "The Pinslip text of the Document."
+        },
+        "documentText": {
+          "type": "string",
+          "description": "The text of the Document."
+        },
+        "emergencyPreamble": {
+          "type": "string",
+          "description": "The Emergency Preamble of the Document."
+        },
+        "rollCalls": {
+          "type": "array",
+          "description": "A list of Roll Calls made on this bill.",
+          "items": {
+            "$ref": "#/definitions/RollCallSummary"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "description": "A list of links to download Document Attachments.",
+          "items": {
+            "$ref": "#/definitions/Attachment"
+          }
+        },
+        "committeeRecommendations": {
+          "type": "array",
+          "description": "A list of Committee Recommendations made on the bill.",
+          "items": {
+            "$ref": "#/definitions/CommitteeRecommendation"
+          }
+        },
+        "amendments": {
+          "type": "array",
+          "description": "A list of Amendments to the bill.",
+          "items": {
+            "$ref": "#/definitions/AmendmentSummary"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "DocumentHistoryAction": {
+      "type": "object",
+      "description": "Data Model for actions taken in the Document's History",
+      "additionalProperties": false,
+      "required": ["date"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Date of the Document action",
+          "format": "date-time"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Branch that took action on the Document"
+        },
+        "action": {
+          "type": "string",
+          "description": "Details of the action taken on the document"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "DocumentSummary": {
+      "type": "object",
+      "description": "Data Model for documents returned in batch API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber", "isDocketBookOnly"],
+      "properties": {
+        "billNumber": {
+          "type": "string",
+          "description": "Bill Number of the Bill"
+        },
+        "docketNumber": {
+          "type": "string",
+          "description": "Docket Number of the Bill"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the Document"
+        },
+        "primarySponsor": {
+          "description": "The primary sponsor of this Document",
+          "allOf": [
+            {
+              "$ref": "#/definitions/BillSponsorSummary"
+            }
+          ]
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this document",
+          "format": "int32"
+        },
+        "details": {
+          "type": "string",
+          "description": "Link for the API to get the details for this entry"
+        },
+        "isDocketBookOnly": {
+          "type": "boolean",
+          "description": "Details are not available on dockets which are only visible on the Clerk's Docket Book"
+        }
+      }
+    },
+    "DtoBase": {
+      "type": "object",
+      "description": "Interface for all Models to share",
+      "x-abstract": true,
+      "additionalProperties": false
+    },
+    "Event": {
+      "type": "object",
+      "description": "Data Model for events returned in single API calls",
+      "additionalProperties": false,
+      "required": ["eventId"],
+      "properties": {
+        "eventId": {
+          "type": "integer",
+          "description": "ID of the Special Event, Hearing, or Session",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the event. In the case of hearings, the name is the name of the hosting Committee or Commission"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the event"
+        },
+        "eventDate": {
+          "type": "string",
+          "description": "Date of the event",
+          "format": "date-time"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "Start time of the event",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the event"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "Exception": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "innerException": {
+          "$ref": "#/definitions/Exception"
+        },
+        "stackTrace": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      }
+    },
+    "FiscalAmount": {
+      "type": "object",
+      "description": "Data Model for fiscal amounts of a committee recommendation",
+      "additionalProperties": false,
+      "properties": {
+        "fiscalType": {
+          "type": "string",
+          "description": "Type of the fiscal amount"
+        },
+        "amount": {
+          "type": "string",
+          "description": "Amount of the fiscal amount"
+        }
+      }
+    },
+    "GeneralCourt": {
+      "type": "object",
+      "description": "Data model for General Courts returned in API calls",
+      "additionalProperties": false,
+      "required": ["number", "firstYear", "secondYear"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the General Court"
+        },
+        "number": {
+          "type": "integer",
+          "description": "Number of the General Court",
+          "format": "int32"
+        },
+        "firstYear": {
+          "type": "integer",
+          "description": "The first year of the General Court",
+          "format": "int32"
+        },
+        "secondYear": {
+          "type": "integer",
+          "description": "The second year of the General Court (if applicable)",
+          "format": "int32"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "GeneralLawChapter": {
+      "type": "object",
+      "description": "Data Model for Chapters returned in single API calls",
+      "additionalProperties": false,
+      "required": ["isRepealed"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The Code of the General Law Chapter"
+        },
+        "name": {
+          "type": "string",
+          "description": "The Name of the General Law Chapter"
+        },
+        "isRepealed": {
+          "type": "boolean",
+          "description": "If the Chapter is repealed or not"
+        },
+        "strickenText": {
+          "type": "string",
+          "description": "The stricken text if the chapter is repealed"
+        },
+        "part": {
+          "description": "A link to the Part that the contains the chapter",
+          "allOf": [
+            {
+              "$ref": "#/definitions/GeneralLawPartSummary"
+            }
+          ]
+        },
+        "sections": {
+          "type": "array",
+          "description": "A list of the sections contained by the chapter",
+          "items": {
+            "$ref": "#/definitions/GeneralLawSectionSummary"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "GeneralLawChapterSummary": {
+      "type": "object",
+      "description": "Data Model for Chapters returned in batch API calls",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The Code of the General Law Chapter"
+        },
+        "details": {
+          "type": "string",
+          "description": "Link to the API call for the detailed information of this Chapter"
+        }
+      }
+    },
+    "GeneralLawPart": {
+      "type": "object",
+      "description": "Data Model for Parts returned in single API calls",
+      "additionalProperties": false,
+      "required": ["firstChapter", "lastChapter"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The Code of the General Law Part"
+        },
+        "name": {
+          "type": "string",
+          "description": "The Name of the General Law Part"
+        },
+        "firstChapter": {
+          "type": "integer",
+          "description": "The First Chapter in the General Law Part",
+          "format": "int32"
+        },
+        "lastChapter": {
+          "type": "integer",
+          "description": "The Last Chapter in the General Law Part",
+          "format": "int32"
+        },
+        "chapters": {
+          "type": "array",
+          "description": "A list of links to the Chapters contained within the General Law Part",
+          "items": {
+            "$ref": "#/definitions/GeneralLawChapterSummary"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "GeneralLawPartSummary": {
+      "type": "object",
+      "description": "Data Model for Parts returned in batch API calls",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The Code of the General Law Part"
+        },
+        "details": {
+          "type": "string",
+          "description": "A link to the detailed information about this General Law Part"
+        }
+      }
+    },
+    "GeneralLawSection": {
+      "type": "object",
+      "description": "Data Model for Sections returned in single API calls",
+      "additionalProperties": false,
+      "required": ["isRepealed"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The code of the General Law Section"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the General Law Section"
+        },
+        "isRepealed": {
+          "type": "boolean",
+          "description": "If the General Law Section has been repealed "
+        },
+        "text": {
+          "type": "string",
+          "description": "The text of the General Law Section"
+        },
+        "chapter": {
+          "description": "A link to the Chapter that the section is under",
+          "allOf": [
+            {
+              "$ref": "#/definitions/GeneralLawChapterSummary"
+            }
+          ]
+        },
+        "part": {
+          "description": "A link to the Part that the section is under",
+          "allOf": [
+            {
+              "$ref": "#/definitions/GeneralLawPartSummary"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "GeneralLawSectionSummary": {
+      "type": "object",
+      "description": "Data Model for Sections returned in batch API calls",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The code of the General Law Section"
+        },
+        "chapterCode": {
+          "type": "string",
+          "description": "The code of the chapter of the General Law Section"
+        },
+        "details": {
+          "type": "string",
+          "description": "A link to the detailed information about this General Law Section"
+        }
+      }
+    },
+    "Hearing": {
+      "type": "object",
+      "description": "Data Model for hearings returned in single API calls",
+      "additionalProperties": false,
+      "properties": {
+        "hearingHost": {
+          "description": "Committee or Commission hosting the hearing",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CommitteeSummary"
+            }
+          ]
+        },
+        "hearingAgendas": {
+          "type": "array",
+          "description": "List of all topics being discussed in this hearing",
+          "items": {
+            "$ref": "#/definitions/AgendaItem"
+          }
+        },
+        "rescheduledHearing": {
+          "description": "If this hearing was rescheduled, this is the previous schedule that has been replaced",
+          "allOf": [
+            {
+              "$ref": "#/definitions/HearingRescheduled"
+            }
+          ]
+        },
+        "location": {
+          "description": "Location of the hearing",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Location"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Event"
+        }
+      ]
+    },
+    "HearingRescheduled": {
+      "type": "object",
+      "description": "Data Model for the past schedule associated with a rescheduled hearing",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Former status of the hearing"
+        },
+        "eventDate": {
+          "type": "string",
+          "description": "Former date of the hearing",
+          "format": "date-time"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "Former start time of the hearing",
+          "format": "date-time"
+        },
+        "location": {
+          "description": "Former location of the hearing",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Location"
+            }
+          ]
+        }
+      }
+    },
+    "HearingSummary": {
+      "type": "object",
+      "description": "Data Model for hearings returned in batch API calls",
+      "additionalProperties": false,
+      "required": ["eventId"],
+      "properties": {
+        "eventId": {
+          "type": "integer",
+          "description": "ID of the Hearing",
+          "format": "int32"
+        },
+        "details": {
+          "type": "string",
+          "description": "Link to the API call for the detailed information of this hearing"
+        }
+      }
+    },
+    "HouseJournal": {
+      "type": "object",
+      "description": "Data Model for House Journals returned in single API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber", "isJoint"],
+      "properties": {
+        "journalSessionDate": {
+          "type": "string",
+          "description": "The Journal Number of the Journal"
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "The General Court Number of the Journal",
+          "format": "int32"
+        },
+        "isJoint": {
+          "type": "boolean",
+          "description": "Whether the journal is from a joint session"
+        },
+        "downloadUrl": {
+          "type": "string",
+          "description": "A link to the PDF of the Journal"
+        },
+        "sessionDate": {
+          "type": "string",
+          "description": "The date the Session Ended, used in transformations",
+          "format": "date-time"
+        },
+        "rollCallRange": {
+          "type": "string",
+          "description": "The Range of the Roll Calls"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "HttpResponseException": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "response": {
+          "type": "file"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Exception"
+        }
+      ]
+    },
+    "JournalSummary": {
+      "type": "object",
+      "description": "The Data Model for Journals returned in Batch Queries",
+      "additionalProperties": false,
+      "required": ["isJoint"],
+      "properties": {
+        "journalSessionDate": {
+          "type": "string",
+          "description": "The Numeric Date of the Session"
+        },
+        "isJoint": {
+          "type": "boolean",
+          "description": "Whether the journal is from a joint session"
+        },
+        "details": {
+          "type": "string",
+          "description": "A link to the detailed information about this Senate Journal"
+        }
+      }
+    },
+    "Leadership": {
+      "type": "object",
+      "description": "Data Model for Leadership",
+      "additionalProperties": false,
+      "properties": {
+        "member": {
+          "description": "A link to the details of the Legislative Member",
+          "allOf": [
+            {
+              "$ref": "#/definitions/LegislativeMemberSummary"
+            }
+          ]
+        },
+        "position": {
+          "type": "string",
+          "description": "The Leadership position of the member"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "LegislativeMember": {
+      "type": "object",
+      "description": "Data Model for Legislative Member returned in single API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the legislative member"
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this legislative member",
+          "format": "int32"
+        },
+        "leadershipPosition": {
+          "type": "string",
+          "description": "Leadership position of the legislative member"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Branch that the legislative member works in"
+        },
+        "memberCode": {
+          "type": "string",
+          "description": "Member code of the legislative member"
+        },
+        "district": {
+          "type": "string",
+          "description": "District of the legislative member"
+        },
+        "party": {
+          "type": "string",
+          "description": "Party of the legislative member"
+        },
+        "emailAddress": {
+          "type": "string",
+          "description": "Email address of the legislative member"
+        },
+        "roomNumber": {
+          "type": "string",
+          "description": "The room number of the legislative member"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "The phone number of the legislative member"
+        },
+        "faxNumber": {
+          "type": "string",
+          "description": "The fax number of the legislative member"
+        },
+        "sponsoredBills": {
+          "type": "array",
+          "description": "A list of bills that are sponsored by the legislative member",
+          "items": {
+            "$ref": "#/definitions/DocumentSummary"
+          }
+        },
+        "coSponsoredBills": {
+          "type": "array",
+          "description": "A list of bills that are co-sponsored by the legislative member",
+          "items": {
+            "$ref": "#/definitions/DocumentSummary"
+          }
+        },
+        "committees": {
+          "type": "array",
+          "description": "A list of Committees the legislative member is of ",
+          "items": {
+            "$ref": "#/definitions/CommitteeSummary"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "LegislativeMemberSummary": {
+      "type": "object",
+      "description": "Data Model for Legislative Members returned in batch API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this legislative member",
+          "format": "int32"
+        },
+        "memberCode": {
+          "type": "string",
+          "description": "Member code of the legislative member"
+        },
+        "details": {
+          "type": "string",
+          "description": "Link for the API to get the details for this entry"
+        }
+      }
+    },
+    "Location": {
+      "type": "object",
+      "description": "Data Model for locations",
+      "additionalProperties": false,
+      "properties": {
+        "locationName": {
+          "type": "string",
+          "description": "Name of the location"
+        },
+        "addressLine1": {
+          "type": "string",
+          "description": "Address Line 1 of the location"
+        },
+        "addressLine2": {
+          "type": "string",
+          "description": "Address Line 2 of the location"
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the location"
+        },
+        "state": {
+          "type": "string",
+          "description": "State of the location"
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Zip Code of the location"
+        }
+      }
+    },
+    "Report": {
+      "type": "object",
+      "description": "The Data Model for Reports return in API Queries",
+      "additionalProperties": false,
+      "required": ["date"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "The date the report was released.",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the report."
+        },
+        "submittedBy": {
+          "type": "string",
+          "description": "Who the report was submitted by."
+        },
+        "downloadUrl": {
+          "type": "string",
+          "description": "The Url to download the report."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "RollCall": {
+      "type": "object",
+      "description": "Data Model for RollCalls returned in API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber", "rollCallNumber"],
+      "properties": {
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "The General Court Number of the Roll Call",
+          "format": "int32"
+        },
+        "branch": {
+          "type": "string",
+          "description": "The Branch of the Roll Call"
+        },
+        "questionMotion": {
+          "type": "string",
+          "description": "The Question Motion Text of the Roll Call"
+        },
+        "rollCallNumber": {
+          "type": "integer",
+          "description": "The Roll Call Number of the Roll Call",
+          "format": "int32"
+        },
+        "yeas": {
+          "type": "array",
+          "description": "A list of legislative members who voted Yea",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        },
+        "nays": {
+          "type": "array",
+          "description": "A list of legislative members who voted Nay",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        },
+        "absent": {
+          "type": "array",
+          "description": "A list of legislative members who were Absent",
+          "items": {
+            "$ref": "#/definitions/LegislativeMemberSummary"
+          }
+        },
+        "downloadUrl": {
+          "type": "string",
+          "description": "A link to download a PDF of the Roll Call"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "RollCallSummary": {
+      "type": "object",
+      "description": "The Data Model for a limited Roll Call used in Batch Queries",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber", "rollCallNumber"],
+      "properties": {
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "The General Court Number of the Roll Call",
+          "format": "int32"
+        },
+        "branch": {
+          "type": "string",
+          "description": "The Branch of the Roll Call"
+        },
+        "rollCallNumber": {
+          "type": "integer",
+          "description": "The Roll Call Number",
+          "format": "int32"
+        },
+        "details": {
+          "type": "string",
+          "description": "Link for the API to get the details for this entry"
+        }
+      }
+    },
+    "SenateJournal": {
+      "type": "object",
+      "description": "Data Model for Senate Journals returned in single API calls. This is here to hide the fact that the journals inherit from the same base class",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber", "isJoint"],
+      "properties": {
+        "journalSessionDate": {
+          "type": "string",
+          "description": "The Journal Number of the Journal"
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "The General Court Number of the Journal",
+          "format": "int32"
+        },
+        "isJoint": {
+          "type": "boolean",
+          "description": "Whether the journal is from a joint session"
+        },
+        "downloadUrl": {
+          "type": "string",
+          "description": "A link to the PDF of the Journal"
+        },
+        "sessionDate": {
+          "type": "string",
+          "description": "The date the Session Ended, used in transformations",
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "Session": {
+      "type": "object",
+      "description": "Data Model for sessions returned in single API calls",
+      "additionalProperties": false,
+      "required": ["generalCourtNumber"],
+      "properties": {
+        "locationName": {
+          "type": "string",
+          "description": "Name of the location for this Session"
+        },
+        "generalCourtNumber": {
+          "type": "integer",
+          "description": "General Court for this Session",
+          "format": "int32"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Event"
+        }
+      ]
+    },
+    "SessionLaw": {
+      "type": "object",
+      "description": "Data Model for Session Laws returned in API calls",
+      "additionalProperties": false,
+      "required": ["year"],
+      "properties": {
+        "year": {
+          "type": "integer",
+          "description": "The year the Session Law is enacted for",
+          "format": "int32"
+        },
+        "chapterNumber": {
+          "type": "string",
+          "description": "The chapter number of the Session Law"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of the Session Law"
+        },
+        "approvalType": {
+          "type": "string",
+          "description": "The approval type of the Session Law"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the Session Law"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the Session Law"
+        },
+        "approvedDate": {
+          "type": "string",
+          "description": "The approval date of the Session Law"
+        },
+        "chapterText": {
+          "type": "string",
+          "description": "The text of the Session Law"
+        },
+        "originBill": {
+          "description": "The limited bill, used to create a link to the detailed bill \n ",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DocumentSummary"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DtoBase"
+        }
+      ]
+    },
+    "SpecialEvent": {
+      "type": "object",
+      "description": "Data Model for Special Events returned in single API calls",
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "description": "Location of the Special Event",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Location"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Event"
+        }
+      ]
+    },
+    "SponsorTypeEnum": {
+      "type": "integer",
+      "description": "Type of the person or collective sponsoring the Document\n1 = Legislative Member, 2 = Committee, 3 = Public Request, 4 = Special Request",
+      "x-enumNames": [
+        "LegislativeMember",
+        "Committee",
+        "PublicRequest",
+        "SpecialGroup"
+      ],
+      "enum": [1, 2, 3, 4]
+    }
+  }
+}
