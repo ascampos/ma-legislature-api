@@ -1,3 +1,8 @@
+Working with the [Massachusetts Legislature Public API](https://malegislature.gov/api/swagger/).
+Using [openapi-typescript-codegen](https://github.com/ferdikoomen/openapi-typescript-codegen).
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
